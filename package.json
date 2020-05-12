@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
-    "db": "mongod --dbpath /users/richa/mongodb-data"
+    "db": "mongod --dbpath /users/richa/mongodb-data",
+    "test": "env-cmd -f ./config/test.env jest --forceExit --maxWorkers=1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +27,10 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.3"
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
   }
 }
